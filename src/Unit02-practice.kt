@@ -43,7 +43,18 @@ fun main()  {
     println(fullName)
 
     //Assignment 8
-    //What code?!
+    // Original code with error
+    /*
+    val balance = 100
+    balance = 120 // Error here
+    println(balance)
+    */
+    //Balance is set as a constant and therefore cannot be changed.
+    //Change val to var and we're golden
+    var balance = 100
+    balance = 120
+    println("Balance is $balance")
+
 
     //Assignment 9
     val myAgeLow = 17
