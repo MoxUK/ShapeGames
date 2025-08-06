@@ -13,7 +13,6 @@ fun main()  {
     println(userScore)
 
     // Assignment 3
-    /*
     print("Enter width: ")
     val widthFloat = readLine()?.toFloat() ?: 0F
 
@@ -22,7 +21,6 @@ fun main()  {
 
     val area = widthFloat * heightFloat
     println("Area of square is $area")
-     */
 
     // Assignment 4
     val pi : Double = 3.14159
