@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ShapeGames.iml" filepath="$PROJECT_DIR$/ShapeGames.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module1/Unit02/Unit02.iml" filepath="$PROJECT_DIR$/module1/Unit02/Unit02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module1/Unit03/Unit03.iml" filepath="$PROJECT_DIR$/module1/Unit03/Unit03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module1/module1.iml" filepath="$PROJECT_DIR$/module1/module1.iml" />
     </modules>
   </component>
 </project>
