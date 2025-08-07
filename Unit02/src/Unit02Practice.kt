@@ -1,5 +1,3 @@
-import java.security.KeyStore
-
 class `Unit02-practice` {
 }
 fun main()  {
@@ -122,7 +120,7 @@ fun main()  {
     val temperature = 10
     val hotOrCold =
         if
-            (temperature > 20) "It is warm"
+                (temperature > 20) "It is warm"
         else
             "It is cold"
     println(hotOrCold)
