@@ -16,7 +16,8 @@ fun main()  {
     println("Assignment $assignmentNum")
     assignmentNum++
     var userScore = 0
-    userScore = userScore+10
+    //userScore = userScore+10
+    userScore+10
     println(userScore)
 
     // Assignment 3
@@ -35,6 +36,7 @@ fun main()  {
     println("Assignment $assignmentNum")
     assignmentNum++
     val pi : Double = 3.14159
+    val piFloat : Float = 3.14159F
     println(pi)
 
     // Assignment 5
@@ -48,8 +50,13 @@ fun main()  {
     //Assignment 6
     println("Assignment $assignmentNum")
     assignmentNum++
-    val isEven: Int = 26%1
-    println(isEven)
+    //Fie's solution
+    var numberA = 25;
+    var isEven : Boolean = numberA % 2 == 0;
+    println("Is the number even? $isEven")
+
+    //val isEven: Int = 25%1
+    //println(isEven)
 
     //Assignment 7
     println("Assignment $assignmentNum")
@@ -113,22 +120,29 @@ fun main()  {
     println("Assignment $assignmentNum")
     assignmentNum++
     val temperature = 10
-    val hotOrCold = if(temperature > 20) "It is warm" else "It is cold"
+    val hotOrCold =
+        if
+            (temperature > 20) "It is warm"
+        else
+            "It is cold"
     println(hotOrCold)
+    //Alt solution
+    println("The water temperature ${if (temperature > 20) "is warm" else "is cold"}")
 
     //Assignment 13
     println("Assignment $assignmentNum")
     assignmentNum++
     val applesInBasket = 10
+    val numberOfBaskets = 2
     val additionalApples = 5
-    println("Total number of apples is " + (applesInBasket + additionalApples))
+    println("Total number of apples is " + (numberOfBaskets * applesInBasket + additionalApples))
 
     //Assignment 14
     println("Assignment $assignmentNum")
     assignmentNum++
     val key: Boolean = true
     val password: Boolean = true
-    val willDoorOpen = if(key == true and password == true) "The door will open" else "The door won't open"
+    val willDoorOpen = if(key == true && password == true) "The door will open" else "The door won't open"
     println(willDoorOpen)
 
     //Assignment 15
