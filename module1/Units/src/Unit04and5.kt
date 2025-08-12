@@ -17,6 +17,7 @@ fun main()  {
     task5v4()
     task5v5()
     task5v6()
+    task5v7()
 }
 
 fun greet() {
@@ -143,6 +144,23 @@ fun task5v6()   {
         7 -> "Sunday"
         else -> "Unknown"
     }
+    val flag = when(day)    {
+        1 -> true
+        2 -> false
+        else -> false
+    }
     println(dayOfWeek)
+    println(flag)
 }
 
+//Dynamic values and calculations
+fun task5v7()   {
+    println("Dynamic values and calculations")
+    val a = 10
+    val b = 20
+    when(a + b) {
+        20 -> println("a + b = 20")
+        30 -> println("a + b = 30")
+        else -> println("Undefined")
+    }
+}
