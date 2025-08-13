@@ -92,7 +92,7 @@ fun task5v2()   {
 //Multiple actions for one value
 fun task5v3()   {
     println("Multiple actions for one value")
-    var a = 10;
+    var a = 11;
     when(a) {
         10 -> {
             println("a = 10")
@@ -103,7 +103,7 @@ fun task5v3()   {
             a = a + 2
         }
         else -> {
-            println{"unknown value"}
+            println("unknown value")
         }
     }
     println(a)
