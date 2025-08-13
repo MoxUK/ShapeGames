@@ -94,7 +94,7 @@ fun unit6task6()    {
         }
         println("i=$i")
     }
-    //break stops loop when condition is met
+    //break stops loop when condition is met.
     println("\n'break'")
     for (i in 1..9){
         if (i == 5) {
