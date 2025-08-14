@@ -180,3 +180,5 @@ Print the sum of all numbers in the array.
     //Solution 2
     println("2. The sum of the numbers in the array is ${numbers.sum()}")
 }
+
+//end of practice
