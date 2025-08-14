@@ -20,6 +20,8 @@ fun main()  {
     section5task1()
     println("\nSection 5 Task 2")
     section5task2()
+    println("\nTest Code and Scratch pad")
+    testCode()
 }
 
 fun section1task1() {
@@ -94,11 +96,12 @@ fun section2task2() {
     val month = 7
      */
     val month: Int = 7
+    val seasons = listOf("Winter", "Spring", "Summer", "Autumn")
     when(month) {
-        in 1 .. 3 -> println("The month ($month) is in the Winter")
-        in 4 .. 6 -> println("The month ($month) is in the Spring")
-        in 7 .. 9 -> println("The month ($month) is in the Summer")
-        in 10 .. 12 -> println("The month ($month) is in the Autumn")
+        in 1 .. 3 -> println("The month ($month) is in the ${seasons[0]}")
+        in 4 .. 6 -> println("The month ($month) is in the ${seasons[1]}")
+        in 7 .. 9 -> println("The month ($month) is in the ${seasons[2]}")
+        in 10 .. 12 -> println("The month ($month) is in the ${seasons[3]}")
         !in 1 .. 12 -> println("This is not a valid month")
     }
 }
@@ -175,8 +178,14 @@ Print the sum of all numbers in the array.
     for(i in numbers) {
         sumOfNumbers = sumOfNumbers+i
     }
-    println("1. The sum of the numbers in the array is ${sumOfNumbers}")
+    println("1. The sum of the numbers in the array is $sumOfNumbers")
 
     //Solution 2
     println("2. The sum of the numbers in the array is ${numbers.sum()}")
+}
+
+//end of practice
+
+fun testCode()  {
+
 }
