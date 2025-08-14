@@ -21,7 +21,6 @@ fun main()  {
     println("\nSection 5 Task 2")
     section5task2()
     println("\nTest Code and Scratch pad")
-    testCode()
 }
 
 fun section1task1() {
@@ -184,8 +183,3 @@ Print the sum of all numbers in the array.
     println("2. The sum of the numbers in the array is ${numbers.sum()}")
 }
 
-//end of practice
-
-fun testCode()  {
-
-}
