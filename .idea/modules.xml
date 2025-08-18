@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/module1/Chapter2_functional_programming/Chapter2_functional_programming.iml" filepath="$PROJECT_DIR$/module1/Chapter2_functional_programming/Chapter2_functional_programming.iml" />
       <module fileurl="file://$PROJECT_DIR$/ShapeGames.iml" filepath="$PROJECT_DIR$/ShapeGames.iml" />
-      <module fileurl="file://$PROJECT_DIR$/module1/Units/Units.iml" filepath="$PROJECT_DIR$/module1/Units/Units.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module1/Chapter1_Basics/Units.iml" filepath="$PROJECT_DIR$/module1/Chapter1_Basics/Units.iml" />
       <module fileurl="file://$PROJECT_DIR$/module1/module1.iml" filepath="$PROJECT_DIR$/module1/module1.iml" />
     </modules>
   </component>
