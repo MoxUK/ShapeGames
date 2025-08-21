@@ -67,24 +67,12 @@ fun section2task1() {
      */
     val grade: Int = 4
     when(grade) {
-        1 -> {
-            println("The grade is $grade - Terrible")
-        }
-        2 -> {
-            println("The grade is $grade - Bad")
-        }
-        3 -> {
-            println("The grade is $grade - Okay")
-        }
-        4 -> {
-            println("The grade is $grade - Good")
-        }
-        5 -> {
-            println("The grade is $grade - Excellent")
-        }
-        else -> {
-            println("The grade is out of range")
-        }
+        1 -> println("The grade is $grade - Terrible")
+        2 -> println("The grade is $grade - Bad")
+        3 -> println("The grade is $grade - Okay")
+        4 -> println("The grade is $grade - Good")
+        5 -> println("The grade is $grade - Excellent")
+        else -> println("The grade is out of range")
     }
 }
 
