@@ -1,8 +1,8 @@
 fun main() {
     sayHello()
-    greet("Artyom")
+    greeting("Artyom")
     val name = "Samson"
-    greet(name)
+    greeting(name)
     val result = add(5, 9)
     println(result)
 
@@ -11,7 +11,7 @@ fun main() {
     displayUser("Kate", position = "Developer", age = 23) //change of order of parameters
 
     doubleValue(8)
-    
+
     var numbers = intArrayOf(4, 5, 6,)
     for (n in numbers) {
         print("$n \t")
@@ -29,7 +29,7 @@ fun sayHello()  {
 }
 
 // function with parameters
-fun greet(name: String) {
+fun greeting(name: String) {
     println("Hello, $name")
 }
 
