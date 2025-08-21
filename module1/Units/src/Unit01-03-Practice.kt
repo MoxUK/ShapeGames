@@ -14,8 +14,8 @@ fun main()  {
     println("Assignment $assignmentNum")
     assignmentNum++
     var userScore = 0
-    //userScore = userScore+10
-    userScore+10
+    userScore = userScore+10
+
     println(userScore)
 
     // Assignment 3
