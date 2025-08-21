@@ -1,5 +1,3 @@
-class `Unit02-practice` {
-}
 fun main()  {
     var assignmentNum: Int = 1
 
