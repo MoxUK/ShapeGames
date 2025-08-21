@@ -83,7 +83,7 @@ fun multiply(x: Int, y: Int): Int  {
 
 //Write a function called isEven that takes an Int and returns true if the number is even, false otherwise.
 fun isEven(number: Int): Boolean    {
-   return number % 2 == 0;
+   return number % 2 == 0
 }
 
 //Write a function called printIfPositive that takes an Int and prints the number only if it is positive (use return to exit early).
