@@ -1,5 +1,3 @@
-import entity.Person
-
 // See app.kt for details and example
 
 /*
