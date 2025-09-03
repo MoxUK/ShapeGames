@@ -14,8 +14,4 @@ class Book(val _title: String,
                 field = value
                 println("Value $value")
         }
-
-        get()   {
-            return title
-        }
 }
