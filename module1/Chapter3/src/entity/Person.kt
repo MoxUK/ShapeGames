@@ -1,6 +1,6 @@
 package entity
 
-class Person(_name: String, _age: Int) {
+class Person(val _name: String, val _age: Int) {
     var name: String
     var age: Int = 18
 
