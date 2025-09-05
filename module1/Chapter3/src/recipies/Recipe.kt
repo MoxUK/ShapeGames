@@ -1,4 +1,4 @@
-package Recipies
+package recipies
 
 /*Task 5.3: Secret Recipe**
 Create a class `Recipe` with:
