@@ -1,5 +1,7 @@
 package social
 
+import entity.NewPerson
+
 /**## Task 1: "Make Your Own Social Media User"
 
 Create a simple class called `User` that represents a person on a social media app.
@@ -16,6 +18,14 @@ In your main function:
 - Call the `sendMessage` function for both users.
 - Print if each user is a teen or not.*/
 
+var age: Int = 18
+
+    set(value)  {
+        println("Call setter")
+        if (value in 1 .. 99) {
+            field = value // field is a hidden place where Kotlin keeps value of a property (e.g. name, age)
+        }
+    }
 
 fun main()  {
     val user1 = User("Alice", 15, "Alice123")
@@ -30,6 +40,11 @@ fun main()  {
     println(user1.age)
 
     println("Is ${user1._nickname} a teen? ${user1.isTeen}")
+
+    val newPerson1 = NewPerson("John", "Wick", 39)
+    newPerson1.age = 19
+
+
 
 
 }

@@ -32,25 +32,37 @@ book is made. Test it with both constructors.*/
 Create a package called `mathops`. Inside it, make a function called `add(a: Int, b: Int): Int`
 that returns the sum of two numbers.*/
 
+/** See the 'mathops' package for solution */
+
 /*Task 3.2:
 In another file, import your `add` function from `mathops` and use it to add two numbers. Print the result.*/
+
+/** See the AddFunction.kt and app.kt under 'mathops' for solution */
 
 /*Task 3.3:
 Create another package called `stringops` with a function called `concat(a: String, b: String): String`
 that joins two strings. Import both `add` and `concat` into a third file and use both functions.*/
+
+/** See the ConcatString.kt and app.kt under 'mathops' for solution */
 
 //Unit 4: Getters and Setters
 /*Task 4.1:
 Create a class called `Student` with a property `age` (Int).
 Add a setter that only allows age values between 5 and 100.*/
 
+/** See the Student object under 'entity' for solution */
+
 /*Task 4.2:
 Add a computed property `isAdult` (Boolean) to the `Student` class. It should return `true`
 if age is 18 or older, else `false`.*/
 
-//Task 4.3:
-//Add a private field `_name` to `Student` and a public property `name` with custom getter and setter. The setter should not allow empty names. Try to set an empty name and print the result.
+/** See the Student object under 'entity' for solution */
 
+//Task 4.3:
+//Add a private field `_name` to `Student` and a public property `name` with custom getter and setter.
+// The setter should not allow empty names. Try to set an empty name and print the result.
+
+/** See the Student object under 'entity' for solution */
 
 //Unit 5: Access Modifiers Practice Tasks
 
@@ -61,6 +73,8 @@ Create a class `BankAccount` with the following:
 - A public function `getBalance()` that returns the current balance.
 Try to access the balance directly from outside the class and see what happens.*/
 
+/** See the BankAccount object under 'bank' for solution */
+
 /*Task 5.2: Family Members**
 Create a class `Person` with:
 - A protected property `lastName` (String).
@@ -69,6 +83,8 @@ Create a class `Person` with:
 Then, create a class `Child` that inherits from `Person` and prints the last name using a function.
 Try to access `lastName` from outside both classes. */
 
+/** See the Person object under 'bank' for solution */
+
 /*Task 5.3: Secret Recipe**
 Create a class `Recipe` with:
 - An internal property `ingredients` (List of String).
@@ -76,3 +92,5 @@ Create a class `Recipe` with:
 - A private function `printIngredients()` that prints all ingredients.
 In your main function, print the recipe name and call `printIngredients()`.
 Try to access `ingredients` from another file in the same module and from a different module.*/
+
+/** See the Recipe object under 'Recipies' for solution */

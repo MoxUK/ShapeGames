@@ -6,7 +6,7 @@ class Book (val _title: String,
     constructor(title: String) : this(title, "Unknown")
 
     init {
-        println("Book Created: '$_title' by by $_author")
+        println("Book Created: '$_title' by $_author")
     }
 
     fun bookInfo()   {
