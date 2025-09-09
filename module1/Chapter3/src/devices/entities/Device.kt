@@ -1,7 +1,8 @@
 package devices.entities
 
-class Device (var name: String) {
+open class Device(val name: String) {
     open fun turnOn()   {
+        println("$name is now on.")
 
     }
 }

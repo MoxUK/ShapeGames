@@ -1,11 +1,18 @@
 package devices.entities
-/*
-class SmartLamp (name: String, var brightness: Int) : Device(name) {
-    var brightness: Int = brightness
-    override fun turnOn()   {
-        println("The device $name is turned on now with a brigthness level of $brightness")
+
+class SmartLamp(
+    name: String,
+    brightnessInput: Int
+) : Device(name) {
+    var brightness: Int = brightnessInput
+        get() {
+            // Getter: never less than 10
+            if (field < 10) return 10
+            return field
+        }
+
+    override fun turnOn() {
+        println("$name is now on with brightness $brightness.")
     }
 }
-
- */
 

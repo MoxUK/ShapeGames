@@ -1,7 +1,7 @@
 package devices
 
 import devices.entities.Device
-//import devices.entities.SmartLamp
+import devices.entities.SmartLamp
 
 /**
  * Task 1: Smart Devices
@@ -14,11 +14,9 @@ import devices.entities.Device
  * Add a getter for the brightness property so that if the brightness is less than 10, it always returns 10.
  *
  */
-/*
+
 fun main()  {
     val device = Device("Non smart lamp")
     val lampOne = SmartLamp("Living Room", 12)
     lampOne.turnOn()
 }
-
- */
