@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/module1/Chapter2_functional_programming/Chapter2_functional_programming.iml" filepath="$PROJECT_DIR$/module1/Chapter2_functional_programming/Chapter2_functional_programming.iml" />
       <module fileurl="file://$PROJECT_DIR$/module1/Chapter3/Chapter3.iml" filepath="$PROJECT_DIR$/module1/Chapter3/Chapter3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module1/MovieDBProject/MovieDBProject.iml" filepath="$PROJECT_DIR$/module1/MovieDBProject/MovieDBProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/ShapeGames.iml" filepath="$PROJECT_DIR$/ShapeGames.iml" />
       <module fileurl="file://$PROJECT_DIR$/module1/Chapter1_Basics/Units.iml" filepath="$PROJECT_DIR$/module1/Chapter1_Basics/Units.iml" />
       <module fileurl="file://$PROJECT_DIR$/module1/W3RExercises/W3RExercises.iml" filepath="$PROJECT_DIR$/module1/W3RExercises/W3RExercises.iml" />
