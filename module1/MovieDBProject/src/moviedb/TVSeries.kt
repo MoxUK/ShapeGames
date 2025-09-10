@@ -1,5 +1,7 @@
 package moviedb
 //TVSeries class should include Title, Pilot Episode Premier date, Synopsis, Genre, Actors, User Rating
+//Inherit Title, Synopsis, Genre and Actors from Media class
+//Additionally, sub-categories with Season/Episode overview
 
 class TVSeries (title: String,
                 val pilotDate: String,
@@ -10,3 +12,10 @@ class TVSeries (title: String,
 }
 
 
+class Season(val seasonNumber: Int) {
+    val episodes: MutableList<Episode> = mutableListOf()
+}
+
+class Episode(val title: String,
+              val episodeNumber: Int,
+              val runtimeMinutes: Int)
