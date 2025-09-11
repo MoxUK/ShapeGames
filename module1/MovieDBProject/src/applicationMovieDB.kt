@@ -158,9 +158,26 @@ fun main() {
 
     //Search for Movie or TV series by name
 
-    //Search for Actor
+    //Run search without results; rerun with results
+
+    var actorName = "Leonardo DiCaprio"
+
+    var foundMovies = db.searchByActor(actorName)
+    //Take the foundMovies Media list returned from the search function.
+    //Use the kotlin built-in collection function .map to transform the list:
+    //For each Media object (it) in foundMovies, take its .title, then return a new list of just titles
+    println("Movies with $actorName: ${foundMovies.map { it.title }}")
+
+    actorName = "Harrison Ford"
+
+    foundMovies = db.searchByActor(actorName)
+    println("Movies with $actorName: ${foundMovies.map { it.title }}")
 
     //list all movies/tv series actor has acted in.
 
     //Update user rating of movie/TV series
+}
+
+private fun List<Media>.clear() {
+    TODO("Not yet implemented")
 }

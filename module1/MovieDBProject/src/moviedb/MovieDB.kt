@@ -31,4 +31,29 @@ class MovieDB {
         }
     }
 
+    /*
+
+    val matches = mutableListOf<Media>()
+        for (media in mediaList) {
+        if (media.title.contains(title, ignoreCase = true)) {
+        matches.add(media)
+        }
+    }
+    return matches
+     */
+
+    fun searchByTitle(searchTitle: String): List<Media> {
+        // Use built-in kotlin collection function 'filter' on list
+        // step through each element on the mediaList and check if the search
+        // string is included in the title of the media, ignoring case
+        // Lambda returns 'true' if match.
+        // Output of function is a list containing titles matching in the lambda
+        return mediaList.filter { it.title.contains(searchTitle, ignoreCase = true) }
+    }
+
+    fun searchByActor(searchActor: String): List<Media> {
+        // Same functionality as searchByTitle, except matching on the 'actors' element in the Media object
+        return mediaList.filter { it.actors.any { it.equals(searchActor, ignoreCase = true) } }
+    }
+
 }
