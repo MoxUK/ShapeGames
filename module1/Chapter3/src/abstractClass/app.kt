@@ -24,6 +24,9 @@ fun main() {
 
     service.info(rectangle3)
     service.info(circle)
+
+    println("Area of ${circle.name} is ${circle.area()}")
+    println("Circumference of ${circle.name} is ${circle.perimeter()}")
 }
 
 
