@@ -12,8 +12,14 @@ Functionality:
 Search for Movie or TV series by name
 Search for Actor
 - list all movies/tv series actor has acted in.
-Add/Remove Movie/TV series to user's favourite list
+(done) Add/Remove Movie/TV series to user's favourite list
 Update user rating of movie/TV series
+(done) List all titles on a specific user's favourite list
+(done) Expand list all titles to include distinction between Movie and TV series episode
+(done) Add a Season to a TV series - check Season doesn't already exist
+(done) Add an episode to a TV series season - check episode doesn't already exist
+(done) List all episodes stored for a specific season
+(done) List all titles in the db
 
  Structure:
  MovieDB ---- Media - Movie
