@@ -3,8 +3,8 @@ Create a Movie Database
 
 Project should include Media as a class with Movie and TVSeries as subclasses plus a User class:
 - Media class should include common variable for Movies and TV Series: Title, Synopsis, Genre, Actors, User Rating
-- Movie class should include Title, Release Year, Runtime, Synopsis, Genre, Director, Actors, User Rating
-- TVSeries class should include Title, Pilot Episode Premier date, Synopsis, Genre, Actors, User Rating
+- Movie class should include (Title), Release Year, Runtime, (Synopsis), (Genre), Director, (Actors), (User Rating)
+- TVSeries class should include (Title), Pilot Episode Premier date, (Synopsis), (Genre), (Actors), (User Rating)
 Additionally, sub-categorise with Season/Episode overview
 - User class including Username, Favorites (list)
 
@@ -20,6 +20,9 @@ Update user rating of movie/TV series
 (done) Add an episode to a TV series season - check episode doesn't already exist
 (done) List all episodes stored for a specific season
 (done) List all titles in the db
+Sort list of movies alphabetically
+Sort list of TV series alphabetically
+Sort list of TV episodes by episode number
 
  Structure:
  MovieDB ---- Media - Movie
