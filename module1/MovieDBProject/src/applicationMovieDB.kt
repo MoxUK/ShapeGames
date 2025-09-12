@@ -73,16 +73,22 @@ fun main() {
     db.addMedia(rickandmorty)
 
     //try to add episode for non-existing season to 'wednesday'
+    println("Execute: Adding episode for non-existing season to 'Wednesday'")
     wednesday.addEpisode(1,
         Episode("Wednesday's Child is Full of Woe",
         1,
         59))
 
+    println("\nPress Enter to continue...")
+    readLine()  // waits until the user presses Enter
+
     // Add season 1 and season 2 to 'wednesday'
+    println("Execute: Adding Season 1 and Season 2 to 'Wednesday")
     wednesday.addSeason(1)
     wednesday.addSeason(2)
 
     //add episodes to 'wednesday'
+    println("Execute: Adding Episodes to 'Wednesday'")
     wednesday.addEpisode(1,
         Episode("Wednesday's Child is Full of Woe",
             1,
@@ -99,6 +105,7 @@ fun main() {
             60))
 
     // Add season 1 to 'rickandmorty'
+    println("Execute: Adding season and episoded to 'Rick and Morty'")
     rickandmorty.addSeason(1)
 
     // Add episodes to 'rickandmorty'
@@ -123,61 +130,93 @@ fun main() {
             22))
 
     // Add season to 'rickandmorty' that already exists
+    println("Execute: Attempting to add existing season to 'Rick and Morty'")
     rickandmorty.addSeason(1)
 
     //Create user(s)
+    println("Execute: Creating a user.")
     val user = User("Soeren")
 
     //Show user's list of favourites (empty)
+    println("Execute: Printing user's favourite list (which should be empty)")
     user.showFavourites()
 
     //Add media to user's list of favourites
+    println("Execute: Adding media to user's favourite list")
     user.addFavorite(bladerunner)
     user.addFavorite(wednesday)
 
     //Show user's list of favourites (not empty)
+    println("Execute: Printing user's favourite list (now populated)")
     user.showFavourites()
 
     //Remove media from user's list of favourites
+    println("Execute: Removing a title from user's favourite list")
     user.removeFavorite(wednesday)
 
     //Show user's list of favourites with one item removed
+    println("Execute: Showing updated favourite list")
     user.showFavourites()
 
     //Add existing media to user's list of favourites (should fail gracefully)
+    println("Execute: Adding title to favourite's list that's already there. ")
     user.addFavorite(bladerunner)
 
     //Show all titles currently in the database
+    println("Execute: Showing all media titles currently in database")
     db.listAllTitles()
 
     // List episodes in Season 1 of 'rickandmorty'
+    println("Execute: Printing all episodes in season 1 of 'Rick and Morty'")
     rickandmorty.listEpisodes(1)
 
     // List episodes in non-existing Season 2 of 'rickandmorty'
+    println("Execute: Attempting to print episodes in a non-existing season of 'Rick and Morty'")
     rickandmorty.listEpisodes(2)
 
+    //Initialise search parameter for actor and title
+    var actorName = ""
+    var mediaTitle = ""
+
     //Search for Movie or TV series by name
+    println("Execute: Searching for any media title containing 'ick'")
 
-    //Run search without results; rerun with results
-
-    var actorName = "Leonardo DiCaprio"
-
-    var foundMovies = db.searchByActor(actorName)
+    mediaTitle = "ick"
+    var foundMovies = db.searchByTitle(mediaTitle)
     //Take the foundMovies Media list returned from the search function.
     //Use the kotlin built-in collection function .map to transform the list:
     //For each Media object (it) in foundMovies, take its .title, then return a new list of just titles
-    println("Movies with $actorName: ${foundMovies.map { it.title }}")
+    //println("Media found with $mediaTitle: ${foundMovies.map { it.title }}")
+    if (foundMovies.isEmpty()) {
+        println("No Media found with $mediaTitle")
+    } else {
+        println("Media found with $mediaTitle: ${foundMovies.map { it.title }}")
+    }
 
+    // Cleaner code with the printing result moved to the MovieDB Class
+    println("Execute: Searching for any media title containing 'Raiders'")
+    mediaTitle = "Raiders"
+    db.printSearchByTitle(mediaTitle)
+
+    //Run search without results; rerun with results
+
+    println("Execute: Searching for any media title with Leonardo DiCaprio - no result should be found")
+    actorName = "Leonardo DiCaprio"
+    db.printSearchByActor(actorName)
+
+    println("Execute: Searching for any media title with Harrison Ford")
     actorName = "Harrison Ford"
+    db.printSearchByActor(actorName)
 
-    foundMovies = db.searchByActor(actorName)
-    println("Movies with $actorName: ${foundMovies.map { it.title }}")
+    println("Execute: Searching for any media title with Vin Diesel")
+    actorName = "Vin Diesel"
+    db.printSearchByActor(actorName)
+
+    println("Execute: Searching for any media title with Jenny Ortega")
+    actorName = "Jenny Ortega"
+    db.printSearchByActor(actorName)
 
     //list all movies/tv series actor has acted in.
 
     //Update user rating of movie/TV series
-}
-
-private fun List<Media>.clear() {
-    TODO("Not yet implemented")
 }

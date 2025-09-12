@@ -19,41 +19,64 @@ class MovieDB {
         } else {
             println("Titles currently in database:")
             // print each object in the mediaList
-            // old code:             mediaList.forEach {println("* ${it.title} (*TBC*)")
+            // old code:             mediaList.forEach {println("* ${it.title}")
             // new: post-fix output with TV or Movie identifier depending on media type
             mediaList.forEach {
                 when (it) {
                     is Movie -> println("* ${it.title} (Movie)")
                     is TVSeries -> println("* ${it.title} (TV Series)")
-                    else -> println("* ${it.title} (unknown media type")
+                    else -> println("* ${it.title} (unknown media type)")
                 }
             }
         }
     }
 
-    /*
+    fun searchByActor(searchActor: String): List<Media> {
+        // Create a list for results
+        val matches = mutableListOf<Media>()
+        // Loop through each Media object in Database
+        // Match searchActor with Actor
+        for (mediaFound in mediaList) {
+            var found = false
+            for (actor in mediaFound.actors) {
+                if (actor.equals(searchActor, ignoreCase = true)) {
+                    found = true
+                    break
+                }
+            }
+            // If match is found, add result mediaFound to matches list
+            if (found) {
+                matches.add(mediaFound)
+            }
+        }
+        return matches
+    }
 
-    val matches = mutableListOf<Media>()
-        for (media in mediaList) {
-        if (media.title.contains(title, ignoreCase = true)) {
-        matches.add(media)
+    fun printSearchByActor(actor: String) {
+        val found = searchByActor(actor)
+        if (found.isEmpty()) {
+            println("No media found with $actor")
+        } else {
+            println("Media found with $actor: ${found.map { it.title }.joinToString(", ")}")
         }
     }
-    return matches
-     */
+
+    //Logic from searchByActor optimised for searchByTitle using lambda function
 
     fun searchByTitle(searchTitle: String): List<Media> {
         // Use built-in kotlin collection function 'filter' on list
-        // step through each element on the mediaList and check if the search
-        // string is included in the title of the media, ignoring case
-        // Lambda returns 'true' if match.
+        // step through each element on the mediaList and check if the search string is included in the title of the media, ignoring case
+        // Lambda returns 'true' if matching.
         // Output of function is a list containing titles matching in the lambda
         return mediaList.filter { it.title.contains(searchTitle, ignoreCase = true) }
     }
 
-    fun searchByActor(searchActor: String): List<Media> {
-        // Same functionality as searchByTitle, except matching on the 'actors' element in the Media object
-        return mediaList.filter { it.actors.any { it.equals(searchActor, ignoreCase = true) } }
+    fun printSearchByTitle(searchTitle: String) {
+        val found = searchByTitle(searchTitle)
+        if (found.isEmpty()) {
+            println("No media found with $searchTitle")
+        } else {
+            println("Media found with $searchTitle: ${found.map { it.title }.joinToString(", ")}")
+        }
     }
-
 }
