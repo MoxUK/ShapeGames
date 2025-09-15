@@ -23,6 +23,7 @@ TODO: Update user rating of movie/TV series
 TODO: Sort list of movies alphabetically
 TODO: list of TV series alphabetically
 TODO: Sort list of TV episodes by episode number
+TODO: Print details about media title
 
  Structure:
  MovieDB ---- Media - Movie

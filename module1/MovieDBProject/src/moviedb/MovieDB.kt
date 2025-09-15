@@ -79,4 +79,9 @@ class MovieDB {
             println("Media found with $searchTitle: ${found.map { it.title }.joinToString(", ")}")
         }
     }
+
+    fun updateRating(media: Media, rating: Double) {
+        media.userRating = rating
+        println("${media.title} rating updated to $rating")
+    }
 }
