@@ -1,13 +1,11 @@
-import  moviedb.Movie
-import  moviedb.MovieDB
-import moviedb.Media
+import  moviedb.entity.Movie
+import  moviedb.service.impl.MovieDBImpl
 import moviedb.User
-import moviedb.TVSeries
-import moviedb.Episode
-import moviedb.Season
+import moviedb.entity.TVSeries
+import moviedb.entity.Episode
 
 fun main() {
-    val db = MovieDB()
+    val db = MovieDBImpl()
 
     // Create media objects (movie)
     val bladerunner = Movie(
@@ -220,3 +218,4 @@ fun main() {
 
     //Update user rating of movie/TV series
 }
+

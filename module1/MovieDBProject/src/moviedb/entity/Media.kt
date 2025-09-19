@@ -1,4 +1,4 @@
-package moviedb
+package moviedb.entity
 //Media class should include common variable for Movies and TV Series: Title, Synopsis, Genre, Actors, User Rating
 
 open class Media(val title: String,
