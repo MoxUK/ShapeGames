@@ -1,19 +1,21 @@
 package moviedb.entities
 //TVSeries class should include Title, Pilot Episode Premier date, Synopsis, Genre, Actors, User Rating
 //Inherit Title, Synopsis, Genre and Actors from Media class
-//Additionally, sub-categories with Season/Episode overview
 
-class TVSeries (title: String,
-                val pilotDate: String,
-                synopsis: String,
-                genre: String,
-                actors: List<String>) : Media(title, synopsis, genre, actors){
+import moviedb.service.TVSeriesActions
+
+class TVSeries(
+    title: String,
+    val pilotDate: String,
+    synopsis: String,
+    genre: String,
+    actors: List<String>,
+    userRating: Double = 0.0
+) : Media(title, synopsis, genre, actors, userRating), TVSeriesActions {
+
     val seasons: MutableList<Season> = mutableListOf()
 
-    //Function to add a season to a TV series - check if season is already present
-    fun addSeason(seasonNumber: Int) {
-        //Check that no existing season on the mutable list 'seasons' already has this season number
-        //It returns true if none match, and false if at least one matches.
+    override fun addSeason(seasonNumber: Int) {
         if (seasons.none { it.seasonNumber == seasonNumber }) {
             seasons.add(Season(seasonNumber))
             println("Season $seasonNumber added to $title")
@@ -22,43 +24,20 @@ class TVSeries (title: String,
         }
     }
 
-    /*
-    //Function to add an episode of a TV series to a season - check if episode is already present
-    fun addEpisode(seasonNumber: Int, episode: Episode) {
-        // Set the season value for the episode.
-        // If the season number is not present on the list, season will be null.
-        // Check that season is set to a value not null and add the episode to the season.
-        // If season value is null then fail gracefully
+    override fun addEpisode(seasonNumber: Int, episode: Episode) {
         val season = seasons.find { it.seasonNumber == seasonNumber }
         if (season != null) {
             season.episodes.add(episode)
-            println("Episode '${episode.title}' added to $title Season $seasonNumber")
-        } else {
-            println("Season $seasonNumber not found for $title. Please add the season first.")
-        }
-    }
-     */
-
-    fun addEpisode(seasonNumber: Int, episode: Episode) {
-        val season = seasons.find { it.seasonNumber == seasonNumber }
-        if (season != null) {
-            season.episodes.add(episode)
-            season.episodes.sortBy { it.episodeNumber }  // ✅ keep sorted after every insert
+            season.episodes.sortBy { it.episodeNumber } // keep episodes sorted
             println("Episode '${episode.title}' added to $title Season $seasonNumber")
         } else {
             println("Season $seasonNumber not found for $title. Please add the season first.")
         }
     }
 
-
-    fun listEpisodes(seasonNumber: Int) {
-        // Set the season value for the episode.
+    override fun listEpisodes(seasonNumber: Int) {
         val season = seasons.find { it.seasonNumber == seasonNumber }
-        // Check if the season number is set (i.e. not null)
-        // if set, continue to look at episode - else fail gracefully
         if (season != null) {
-            // Check if there are episodes assigned to the season.
-            // Fail gracefully if none else print all episodes
             if (season.episodes.isEmpty()) {
                 println("No episodes found in Season $seasonNumber of $title")
             } else {
@@ -83,12 +62,3 @@ class TVSeries (title: String,
         println("=========================")
     }
 }
-
-
-class Season(val seasonNumber: Int) {
-    val episodes: MutableList<Episode> = mutableListOf()
-}
-
-class Episode(val title: String,
-              val episodeNumber: Int,
-              val runtimeTVEpisode: Int)

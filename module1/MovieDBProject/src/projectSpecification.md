@@ -21,14 +21,14 @@ Movie & Tv Series:
     - check episode doesn't already exist
     - Store episode in correct order
 - Search for Movie or TV series by title
-- Search for Actor
+- Actor search: list all media titles actor has acted in.
 - List all titles in the db 
     - print distinction between Movie and TV series episode
+- List all titles in the db (sorted alphabetically)
 - List all episodes stored for a specific season
-- List all content of the Media database 
-    - Sort list alphabetically
+    - Check if season exists, if not then fail gracefully
 - Print details about media title
-- Actor search: list all media titles actor has acted in.
+
 
 User:
 - Add Movie/TV series to user's favourite list
@@ -45,6 +45,8 @@ User:
                         TV Series - Season
                                     Episode
                 Services:
-                Interface - Implementation
+                DB Interface - Implementation
+                TV Series Actions
+                User Specific Actions
                 
 
