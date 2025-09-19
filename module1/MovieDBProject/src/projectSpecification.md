@@ -1,34 +1,50 @@
-/**
-Create a Movie Database
+Create a Media Database with basic functionality as described below.
 
 Project should include Media as a class with Movie and TVSeries as subclasses plus a User class:
-- Media class should include common variable for Movies and TV Series: Title, Synopsis, Genre, Actors, User Rating
-- Movie class should include (Title), Release Year, Runtime, (Synopsis), (Genre), Director, (Actors), (User Rating)
-- TVSeries class should include (Title), Pilot Episode Premier date, (Synopsis), (Genre), (Actors), (User Rating)
-Additionally, sub-categorise with Season/Episode overview
-- User class including Username, Favorites (list)
+- Media class should be an abstract including common variable for Movies and TV Series: 
+    Title, Synopsis, Genre, Actors, User Rating
+- Movie class should include ... 
+    Release Year, Runtime, Director, and inherit (Title), (Synopsis), (Genre), Actors) and (User Rating) from Media
+- TVSeries class should include 
+    Pilot Episode Premier date, and inherit  (Title), (Synopsis), (Genre), (Actors) and (User Rating) from Media 
+    - TVSeries class should include additional sub-categories
+      - Season with Season Number
+      - Episode with Episode title, number and runtime
+- User class including Username and Favorites (list)
 
-Functionality:
-(done) Search for Movie or TV series by name
-(done) Search for Actor
-(done) - list all movies/tv series actor has acted in.
-(done) Add/Remove Movie/TV series to user's favourite list
-TODO: Update user rating of movie/TV series
-(done) List all titles on a specific user's favourite list
-(done) Expand list all titles to include distinction between Movie and TV series episode
-(done) Add a Season to a TV series - check Season doesn't already exist
-(done) Add an episode to a TV series season - check episode doesn't already exist
-(done) List all episodes stored for a specific season
-(done) List all titles in the db
-TODO: Sort list of movies alphabetically
-TODO: list of TV series alphabetically
-TODO: Sort list of TV episodes by episode number
-TODO: Print details about media title
+Functionality to implement:
+Movie & Tv Series:
+- Add a Season to a TV series 
+    - check Season doesn't already exist
+- Add an episode to a TV series season 
+    - Check if season doesn't exist
+    - check episode doesn't already exist
+    - Store episode in correct order
+- Search for Movie or TV series by title
+- Search for Actor
+- List all titles in the db 
+    - print distinction between Movie and TV series episode
+- List all episodes stored for a specific season
+- List all content of the Media database 
+    - Sort list alphabetically
+- Print details about media title
+- Actor search: list all media titles actor has acted in.
+
+User:
+- Add Movie/TV series to user's favourite list
+    - Check if title is already on list 
+- Remove title from user's favourite list
+- List all titles on a specific user's favourite list
+- Update user rating of movie/TV series (TODO!)
+
 
  Structure:
- MovieDB ---- Media - Movie
-                    - TV Series
-                        - Season
-                            - Episode
-              User
- */
+ MovieDB ------ Entities:
+                User
+                Media - Movie
+                        TV Series - Season
+                                    Episode
+                Services:
+                Interface - Implementation
+                
+

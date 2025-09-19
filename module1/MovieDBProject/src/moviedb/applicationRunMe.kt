@@ -1,11 +1,15 @@
-import  moviedb.entity.Movie
-import  moviedb.service.impl.MovieDBImpl
-import moviedb.User
-import moviedb.entity.TVSeries
-import moviedb.entity.Episode
+package moviedb
+import moviedb.service.MovieDatabase
+import moviedb.service.impl.MovieDatabaseImpl
+import moviedb.entities.Movie
+import moviedb.entities.User
+import moviedb.entities.TVSeries
+import moviedb.entities.Episode
+
+
 
 fun main() {
-    val db = MovieDBImpl()
+    val db: MovieDatabase = MovieDatabaseImpl()
 
     // Create media objects (movie)
     val bladerunner = Movie(
@@ -74,8 +78,8 @@ fun main() {
     println("Execute: Adding episode for non-existing season to 'Wednesday'")
     wednesday.addEpisode(1,
         Episode("Wednesday's Child is Full of Woe",
-        1,
-        59))
+            1,
+            59))
 
     println("\nPress Enter to continue...")
     readLine()  // waits until the user presses Enter
@@ -113,13 +117,13 @@ fun main() {
             22))
 
     rickandmorty.addEpisode(1,
-        Episode("Lawnmower Dog",
-            2,
+        Episode("Anatomy Park",
+            3,
             22))
 
     rickandmorty.addEpisode(1,
-        Episode("Anatomy Park",
-            3,
+        Episode("Lawnmower Dog",
+            2,
             22))
 
     rickandmorty.addEpisode(1,
@@ -214,8 +218,20 @@ fun main() {
     actorName = "Jenny Ortega"
     db.printSearchByActor(actorName)
 
+    //Show all titles currently in the database sorted alphabetically
+    println("Execute: Showing all media titles currently in database (sorted alphabetically)")
+    db.listAllMediaAlphabetically()
+
+    //Print details for movie title
+    println("Execute: Print Details for Blade Runner (Movie)")
+    bladerunner.printDetails()
+
+    //Print details for TV Series
+    println("Execute: Print Details for Wednesday (TV Series)")
+    wednesday.printDetails()
+
+
     //list all movies/tv series actor has acted in.
 
     //Update user rating of movie/TV series
 }
-

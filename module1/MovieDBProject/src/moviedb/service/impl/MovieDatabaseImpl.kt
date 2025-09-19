@@ -1,18 +1,19 @@
 package moviedb.service.impl
 
-import moviedb.entity.Media
-import moviedb.entity.Movie
-import moviedb.entity.TVSeries
+import moviedb.entities.Media
+import moviedb.entities.Movie
+import moviedb.entities.TVSeries
+import moviedb.service.MovieDatabase
 
-class MovieDBImpl {
+class MovieDatabaseImpl : MovieDatabase {
     private val mediaList: MutableList<Media> = mutableListOf()
 
-    fun addMedia(media: Media)  {
+    override fun addMedia(media: Media)  {
         //add media to the list of media (mediaList)
         mediaList.add(media)
     }
 
-    fun listAllTitles() {
+    override fun listAllTitles() {
         if (mediaList.isEmpty()) {
             println("The database is currently empty.")
         } else {
@@ -30,7 +31,7 @@ class MovieDBImpl {
         }
     }
 
-    fun searchByActor(searchActor: String): List<Media> {
+    override fun searchByActor(searchActor: String): List<Media> {
         // Create a list for results
         val matches = mutableListOf<Media>()
         // Loop through each Media object in Database
@@ -51,7 +52,7 @@ class MovieDBImpl {
         return matches
     }
 
-    fun printSearchByActor(actor: String) {
+    override fun printSearchByActor(actor: String) {
         val found = searchByActor(actor)
         if (found.isEmpty()) {
             println("No media found with $actor")
@@ -62,7 +63,7 @@ class MovieDBImpl {
 
     //Logic from searchByActor optimised for searchByTitle using lambda function
 
-    fun searchByTitle(searchTitle: String): List<Media> {
+    override fun searchByTitle(searchTitle: String): List<Media> {
         // Use built-in kotlin collection function 'filter' on list
         // step through each element on the mediaList and check if the search string is included in the title of the media, ignoring case
         // Lambda returns 'true' if matching.
@@ -70,7 +71,7 @@ class MovieDBImpl {
         return mediaList.filter { it.title.contains(searchTitle, ignoreCase = true) }
     }
 
-    fun printSearchByTitle(searchTitle: String) {
+    override fun printSearchByTitle(searchTitle: String) {
         val found = searchByTitle(searchTitle)
         if (found.isEmpty()) {
             println("No media found with $searchTitle")
@@ -79,8 +80,25 @@ class MovieDBImpl {
         }
     }
 
-    fun updateRating(media: Media, rating: Double) {
+    override fun updateRating(media: Media, rating: Double) {
         media.userRating = rating
         println("${media.title} rating updated to $rating")
     }
+
+    override fun listAllMediaAlphabetically() {
+        if (mediaList.isEmpty()) {
+            println("The database is empty.")
+        } else {
+            println("All media in alphabetical order:")
+            mediaList.sortedBy { it.title.lowercase() }   // sort list - ignore case
+                .forEach {
+                    when (it) {
+                        is Movie -> println("${it.title} (Movie)")
+                        is TVSeries -> println("${it.title} (TV Series)")
+                        else -> println("${it.title} (Unknown Media Type)")
+                    }
+                }
+        }
+    }
+
 }

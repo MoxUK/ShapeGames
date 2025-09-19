@@ -1,5 +1,6 @@
 package moviedb.service
-/**
+import moviedb.entities.Media
+
 interface MovieDatabase {
     fun addMedia(media: Media)
     fun searchByTitle(searchTitle: String): List<Media>
@@ -8,6 +9,5 @@ interface MovieDatabase {
     fun listAllTitles()
     fun printSearchByTitle(searchTitle: String)
     fun printSearchByActor(searchActor: String)
+    fun listAllMediaAlphabetically()
 }
-
- */

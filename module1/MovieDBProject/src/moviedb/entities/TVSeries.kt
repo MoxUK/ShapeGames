@@ -1,4 +1,4 @@
-package moviedb.entity
+package moviedb.entities
 //TVSeries class should include Title, Pilot Episode Premier date, Synopsis, Genre, Actors, User Rating
 //Inherit Title, Synopsis, Genre and Actors from Media class
 //Additionally, sub-categories with Season/Episode overview
@@ -22,6 +22,7 @@ class TVSeries (title: String,
         }
     }
 
+    /*
     //Function to add an episode of a TV series to a season - check if episode is already present
     fun addEpisode(seasonNumber: Int, episode: Episode) {
         // Set the season value for the episode.
@@ -36,6 +37,19 @@ class TVSeries (title: String,
             println("Season $seasonNumber not found for $title. Please add the season first.")
         }
     }
+     */
+
+    fun addEpisode(seasonNumber: Int, episode: Episode) {
+        val season = seasons.find { it.seasonNumber == seasonNumber }
+        if (season != null) {
+            season.episodes.add(episode)
+            season.episodes.sortBy { it.episodeNumber }  // ✅ keep sorted after every insert
+            println("Episode '${episode.title}' added to $title Season $seasonNumber")
+        } else {
+            println("Season $seasonNumber not found for $title. Please add the season first.")
+        }
+    }
+
 
     fun listEpisodes(seasonNumber: Int) {
         // Set the season value for the episode.
@@ -56,6 +70,17 @@ class TVSeries (title: String,
         } else {
             println("Season $seasonNumber not found for $title")
         }
+    }
+
+    override fun printDetails() {
+        println("=== TV Series Details ===")
+        println("Title: $title")
+        println("Pilot Episode Premier: $pilotDate")
+        println("Genre: $genre")
+        println("Actors: ${actors.joinToString(", ")}")
+        println("Synopsis: $synopsis")
+        println("User Rating: $userRating")
+        println("=========================")
     }
 }
 

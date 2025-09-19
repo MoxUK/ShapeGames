@@ -1,9 +1,4 @@
-package moviedb
-
-import moviedb.entity.Media
-
-//User class including Username, Favorites (list)
-//Functionality: favorites list with ability to Add and Remove Media - check: Adding a title already on list should fail
+package moviedb.entities
 
 class User(val username: String) {
     val favourites: MutableList<Media> = mutableListOf()
