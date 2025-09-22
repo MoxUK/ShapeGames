@@ -48,5 +48,9 @@ User:
                 DB Interface - Implementation
                 TV Series Actions
                 User Specific Actions
+
+
+Note:
+userRating should not be public mutable. Wrap in a setter with validation.
                 
 
