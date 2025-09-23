@@ -1,9 +1,9 @@
-package shop.bankaccount.service.impl
+package shop.service.impl
 
-import shop.bankaccount.service.AccountService
-import shop.bankaccount.entity.BankAccount
+import shop.entity.BankAccount
+import shop.service.AccountService
 
-class AccountServiceImpl : AccountService   {
+class AccountServiceImpl : AccountService {
     override fun withdraw(account: BankAccount, amount: Double) : Boolean   {
         return account.withdraw(amount)
     }

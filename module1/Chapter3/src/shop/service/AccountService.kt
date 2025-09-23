@@ -1,6 +1,6 @@
-package shop.bankaccount.service
+package shop.service
 
-import shop.bankaccount.entity.BankAccount
+import shop.entity.BankAccount
 
 interface AccountService {
     fun withdraw(account: BankAccount, amount: Double): Boolean

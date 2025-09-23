@@ -1,12 +1,10 @@
 package shop
-import shop.order.service.OrderService
-import shop.bankaccount.entity.BankAccount
-import shop.user.entity.User
-import shop.bankaccount.service.impl.AccountServiceImpl
-import shop.order.service.impl.OnlineOrderService
-import shop.order.entity.Order
-import shop.order.entity.ExpressOrder
-import shop.order.entity.GiftOrder
+import shop.entity.BankAccount
+import shop.entity.User
+import shop.service.impl.AccountServiceImpl
+import shop.service.impl.OnlineOrderService
+// import shop.entity.ExpressOrder
+// import shop.entity.GiftOrder
 
 
 /**
@@ -33,21 +31,21 @@ fun main()  {
     gift.displayInfo()*/
 
     val account = BankAccount(balance = 100.00)
-    val user = User("Alice", account)
+    val user = User(11,"Alice", )
 
     user.showBalance()
 
     val accountService = AccountServiceImpl()
     val orderService = OnlineOrderService(accountService)
 
-    val expressOrder = ExpressOrder(1001L, user, 10.0, 40.0)
-    expressOrder.displayInfo()
+    //val expressOrder = ExpressOrder(1001L, user, 10.0, 40.0)
+    //expressOrder.displayInfo()
 
-    val giftOrder = GiftOrder(2002L, user, 3.0, 7.0, "Happy Birthday")
-    giftOrder.displayInfo()
+    //val giftOrder = GiftOrder(2002L, user, 3.0, 7.0, "Happy Birthday")
+    //giftOrder.displayInfo()
 
-    orderService.processOrder(expressOrder)
-    orderService.processOrder(giftOrder)
+    //orderService.processOrder(expressOrder)
+    //orderService.processOrder(giftOrder)
     user.showBalance()
 
 

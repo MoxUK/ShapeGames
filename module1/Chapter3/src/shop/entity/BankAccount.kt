@@ -1,6 +1,4 @@
-package shop.bankaccount.entity
-
-import java.util.function.DoubleUnaryOperator
+package shop.entity
 
 class BankAccount(private var balance: Double) {
     fun getBalance() : Double   {

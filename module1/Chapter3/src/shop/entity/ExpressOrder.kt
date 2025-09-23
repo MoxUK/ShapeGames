@@ -1,6 +1,5 @@
-package shop.order.entity
-import shop.user.entity.User
-
+package shop.entity
+/**
 open class ExpressOrder(
     orderId: Long,
     user: User,
@@ -17,3 +16,5 @@ open class ExpressOrder(
                 "Total: ${totalAmount()}")
     }
 }
+
+ */

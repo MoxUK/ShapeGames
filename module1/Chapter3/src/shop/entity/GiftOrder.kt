@@ -1,6 +1,5 @@
-package shop.order.entity
-import shop.user.entity.User
-
+package shop.entity
+/**
 class GiftOrder (
     orderID: Long,
     user: User,
@@ -13,5 +12,7 @@ class GiftOrder (
                 "Gift Message: $giftMessage")
     }
 }
+ */
+
 
 
