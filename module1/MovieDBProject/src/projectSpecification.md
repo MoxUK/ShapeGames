@@ -52,5 +52,6 @@ User:
 
 Note:
 userRating should not be public mutable. Wrap in a setter with validation.
+Check userRating on item for multiple users - does it take latest value? Calculate average and display on Media Object
                 
 
