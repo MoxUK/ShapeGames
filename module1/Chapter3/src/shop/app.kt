@@ -3,8 +3,8 @@ import shop.entity.BankAccount
 import shop.entity.User
 import shop.service.impl.AccountServiceImpl
 import shop.service.impl.OnlineOrderService
-// import shop.entity.ExpressOrder
-// import shop.entity.GiftOrder
+//import shop.entity.ExpressOrder
+//import shop.entity.GiftOrder
 
 
 /**
@@ -21,32 +21,27 @@ Use access modifiers so that expressFee can only be changed inside ExpressOrder 
  */
 
 fun main()  {
-  /*  val order = Order(1001L, "pending")
-    order.displayInfo()
 
-    val express = ExpressOrder(1002L, "Shipped", 10.25)
-    express.displayInfo()
 
-    val gift = GiftOrder(1003L, "Shipped", 11.25, "This is a msg" )
-    gift.displayInfo()*/
-
-    val account = BankAccount(balance = 100.00)
-    val user = User(11,"Alice", )
-
-    user.showBalance()
+    cart.addProducts(p1)
+    cart.addProducts(p2)
+    cart.addProducts(p3)
 
     val accountService = AccountServiceImpl()
     val orderService = OnlineOrderService(accountService)
 
-    //val expressOrder = ExpressOrder(1001L, user, 10.0, 40.0)
-    //expressOrder.displayInfo()
+    val order = Order(101, user, cart.getProducts(), address)
 
-    //val giftOrder = GiftOrder(2002L, user, 3.0, 7.0, "Happy Birthday")
-    //giftOrder.displayInfo()
+    order.displayInfo()
+    order.track()
+    orderService.processOrder(order)
+    order.track()
 
-    //orderService.processOrder(expressOrder)
-    //orderService.processOrder(giftOrder)
     user.showBalance()
+    println("------------------")
+    orderService.cancelOrder(order)
+    user.showBalance()
+
 
 
 }
