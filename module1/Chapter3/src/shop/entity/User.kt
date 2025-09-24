@@ -12,7 +12,7 @@ data class User(
         println("$name's balance: ${account.getBalance()}")
     }
 
-    fun getAccount()    {
-       // return account
+    fun getAccount(): BankAccount {
+        return account;
     }
 }

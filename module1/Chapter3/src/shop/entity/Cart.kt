@@ -3,7 +3,7 @@ package shop.entity
 class Cart {
     private val items: MutableList<Product> = mutableListOf()
 
-    fun addProduct(product: Product)    {
+    fun addProduct(product: Product) {
         items.add(product)
     }
 
@@ -11,15 +11,14 @@ class Cart {
         items.remove(product)
     }
 
-    fun getProducts(): List<Product>    {
+    fun getProducts(): List<Product> {
         return items
-        //TODO
     }
 
-    fun totalAmount(): Double   {
-    // return items.sumOf {it.price}
+    /** return items.sumOf { it.price } */
+    fun totalAmount(): Double {
         var sum = 0.0
-        for (it in items)   {
+        for (it in items) {
             sum += it.price
         }
         return sum

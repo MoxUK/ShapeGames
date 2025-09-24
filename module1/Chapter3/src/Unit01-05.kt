@@ -16,7 +16,7 @@ get()   {
 //Classes and Objects in OOP
 
 /*
-fun main()  {
+fun .main()  {
     var person: Person = Person(_firstName: "Lewis", _lastName: "Hammilton")
     var person2: Person = Person(_firstName: "George", _lastName: "Russel")
 }
