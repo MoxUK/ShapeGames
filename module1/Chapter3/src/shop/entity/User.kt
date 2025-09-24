@@ -13,6 +13,6 @@ data class User(
     }
 
     fun getAccount()    {
-        return account
+       // return account
     }
 }
