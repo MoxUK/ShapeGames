@@ -10,7 +10,7 @@ class Order(
     private val deliveryAddress: Address,
     private var status: OrderStatus = OrderStatus.PENDING
 ): Trackable {
-    fun totalAmount(): Double   {
+    open fun totalAmount(): Double   {
         return products.sumOf { it.price }
     }
 

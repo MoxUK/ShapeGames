@@ -1,20 +1,26 @@
 package shop.entity
-/**
+
+import shop.entity.status.OrderStatus
+
 open class ExpressOrder(
     orderId: Long,
     user: User,
-    protected var expressFee: Double,
-    private val baseAmount: Double
-) : Order(orderId, user) {
+    product: List<Product>,
+    deliveryAddress: Address,
+    private var expressFee: Double,
+    status: OrderStatus = OrderStatus.PENDING
+) : Order(orderId, user, product, deliveryAddress, status) {
 
     override fun totalAmount(): Double{
-        return baseAmount + expressFee
+        return super.totalAmount() + expressFee
     }
 
     override fun displayInfo() {
-        println("Order #:orderId for ${user.name} - Express Fee: $expressFee - " +
-                "Total: ${totalAmount()}")
+        super.displayInfo()
+        println("Express Fee: $expressFee ")
+        println("Total amount with ExpressFee: ${totalAmount()}")
     }
+
+
 }
 
- */

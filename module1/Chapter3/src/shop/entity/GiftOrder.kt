@@ -1,18 +1,23 @@
 package shop.entity
-/**
+
+import shop.entity.status.OrderStatus
+
 class GiftOrder (
     orderID: Long,
     user: User,
+    products: List<Product>,
+    deliveryAddress: Address,
     expressFee: Double,
-    baseAmount: Double,
-    val giftMessage: String
-) : ExpressOrder(orderID, user, expressFee, baseAmount)  {
+    private val giftMessage: String,
+    status: OrderStatus = OrderStatus.PENDING
+) : ExpressOrder(orderID, user, products, deliveryAddress, expressFee, status)  {
+
     override fun displayInfo()  {
-        println("Order #:$orderID for ${user.name} - Express Fee: $expressFee - Total: ${totalAmount()} - " +
-                "Gift Message: $giftMessage")
+        super.displayInfo()
+        println("Gift Message: $giftMessage")
     }
 }
- */
+
 
 
 

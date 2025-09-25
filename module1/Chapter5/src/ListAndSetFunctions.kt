@@ -53,10 +53,57 @@ fun main()  {
     val different = employee.subtract(people2) //same as: employee subtract people2
     println(different)
 
+    //Set
     val numbersSet1: HashSet<Int> = hashSetOf(5, 6, 7)
     val numbersSet2: LinkedHashSet<Int> = linkedSetOf(1, 2, 3)
     val numbersSet3: MutableSet<Int> = mutableSetOf(1,2,3)
 
+    //Map
+    val students: Map<Int, String> = mapOf(101 to "Tom", 102 to "Sam", 91 to "Bob") //Map<Int, String>
+    println(students)
+
+    for (student in students)   {
+        val key = student.key
+        val value = student.value
+        println("$key, $value")
+    }
+
+    val dictionary = mapOf("red" to "czerwony", "blue" to "nibeski", "green" to "zielony")
+    val blue = dictionary.get("blue")
+    //val blue = dictionary.["blue"]
+    println(blue)
+
+    //val yellow = dictionary.["yellow"] //This is null
+    //println(yellow)
+
+    val yellow = dictionary.getOrDefault("yellow", "Not found!")
+    println(yellow)
+    val orange = dictionary.getOrElse("orange") {"Not found either!"}
+    println(orange)
+
+    println("Keys of dictionary: ${dictionary.keys}")
+    println("Values of dictionary: ${dictionary.values}")
+
+    val workers = mutableMapOf(1 to "Tom", 2 to "Sam", 3 to "Bob")
+    val hashmap = hashMapOf("a" to "A", "b" to "B", "c" to "C")
+
+    workers.put(5,"Peter")
+    workers[4] = "Alice"
+
+    println(workers)
+
+    workers.put(5, "Helmut")
+    println(workers)
+
+    workers.remove(1)
+    println(workers)
 
 
+    val rating: MutableMap<Int, String?> = mutableMapOf(1 to "3.0", 2 to "4.5", 3 to "2.5", 4 to "", 5 to "")
+    println(rating)
+    val valueOfRatingValues: List<Double> = rating.values.mapNotNull {
+        str -> str?.takeIf {it.isNotBlank() }?.toDoubleOrNull()
+    }
+    println(valueOfRatingValues)
+    println(valueOfRatingValues.average())
 }
