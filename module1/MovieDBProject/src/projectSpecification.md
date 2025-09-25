@@ -55,5 +55,39 @@ userRating should not be public mutable. Wrap in a setter with validation.
 Check userRating on item for multiple users - does it take latest value? 
 Maybe create a list of user ratings - Calculate average and display on Media Object - how do I index the user rating so
 one user won't be able to submit multiple ratings
-                
+
+Maybe use mapping for user with rating added to the list then convert list to doubles and calculate average.
+Important: Ignore any null values so these will not be included in the calculation:
+
+    val rating: MutableMap<Int, String?> = mutableMapOf(1 to "3.0", 2 to "4.5", 3 to "2.5", 4 to "", 5 to "")
+    println(rating) //Output: {1=3.0, 2=4.5, 3=2.5, 4=, 5=}
+
+    val valueOfRatingValues = mutableListOf<Double>()
+    
+    for (str in rating.values) {
+        if (str != null && str.isNotBlank()) {
+            val num = str.toDoubleOrNull()
+            if (num != null) {
+                valueOfRatingValues.add(num)
+            }
+        }
+    }
+    println(valueOfRatingValues) //Output: [3.0, 4.5, 2.5]
+    println(valueOfRatingValues.average()) //Output: 3.3333333333333335
+
+For Loop can be expressed as a lambda:
+
+    val valueOfRatingValues: List<Double> = rating.values.mapNotNull {
+    str -> str?.takeIf {it.isNotBlank() }?.toDoubleOrNull()
+    }
+
+----
+
+Add user reviews to each Media?
+Each user can submit a review, but only one review per person:
+If no review exists for user, then add review
+If review exists for user, then warn of overwrite - confirm y/n:
+    y: overwrite existing review
+    n: keep existing review
+                    
 

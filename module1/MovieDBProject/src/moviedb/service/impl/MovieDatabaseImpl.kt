@@ -81,6 +81,7 @@ class MovieDatabaseImpl : MovieDatabase {
     }
 
     override fun updateRating(media: Media, rating: Double) {
+        //TODO: Check value of rating - should be 0<userRating=<10
         media.userRating = rating
         println("${media.title} rating updated to $rating")
     }
