@@ -45,13 +45,15 @@ User:
                         TV Series - Season
                                     Episode
                 Services:
-                DB Interface - Implementation
-                TV Series Actions
-                User Specific Actions
+                DB Actions (Interface) - Implementation
+                TV Series Actions (Interface)
+                User Specific Actions (Interface)
 
 
-Note:
+TODO:
 userRating should not be public mutable. Wrap in a setter with validation.
-Check userRating on item for multiple users - does it take latest value? Calculate average and display on Media Object
+Check userRating on item for multiple users - does it take latest value? 
+Maybe create a list of user ratings - Calculate average and display on Media Object - how do I index the user rating so
+one user won't be able to submit multiple ratings
                 
 
