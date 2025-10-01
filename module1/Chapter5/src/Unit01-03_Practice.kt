@@ -1,5 +1,5 @@
 /**
- * . Student Grades
+ * 1. Student Grades
  * Create a class called Student.
  * Each student has a name and a list of grades (Int).
  * Write a function inside the class that calculates the average grade of the student.
