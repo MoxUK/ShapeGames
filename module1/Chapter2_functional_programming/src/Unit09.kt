@@ -1,7 +1,7 @@
 /**
  * Lambda expressions
  * are written within {}
- * e.g. {println("Hello")}
+ * e.g. {println("Hello")}..
  */
 
 fun main()  {
