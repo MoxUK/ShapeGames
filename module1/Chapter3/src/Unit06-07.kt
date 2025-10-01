@@ -15,7 +15,7 @@ In StudentAccount, add a function showStudentInfo() that prints all account info
 /**
 Unit 7: Overriding Practice Task
 Task 1: Medical Account Notifications
-
+..
 Suppose you are working on a medical app.
 
 Create a base class MedicalAccount with a property username (String) and a function notify() that prints "General medical notification for {username}".
