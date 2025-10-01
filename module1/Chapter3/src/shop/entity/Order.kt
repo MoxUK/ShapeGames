@@ -3,8 +3,8 @@ package shop.entity
 import shop.entity.status.OrderStatus
 import shop.service.Trackable
 
-class Order(
-    private val orderID: Int,
+open class Order(
+    private val orderID: Long,
     private val user: User,
     private val products: List<Product>,
     private val deliveryAddress: Address,
@@ -37,7 +37,7 @@ class Order(
         status = newStatus
     }
 
-    fun getId(): Int {
+    fun getId(): Long {
         return orderID
     }
 
